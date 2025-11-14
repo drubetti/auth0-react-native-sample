@@ -6,12 +6,18 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "plugins": [
       [
         "react-native-auth0",
         {
-          "domain": "{DOMAIN}"
+          "domain": "rubetti.eu.auth0.com"
+        }
+      ],
+      [
+        "expo-dev-client",
+        {
+          "launchMode": "most-recent"
         }
       ]
     ],
@@ -22,7 +28,10 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.auth0samples"
+      "bundleIdentifier": "com.auth0samples",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -34,6 +43,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d0f71562-3e51-435e-a54b-c493473a55ac"
+      }
     }
   }
 }
